@@ -1,0 +1,14 @@
+/* p { text-align:left; } */
+
+reveal h1 { font-size:80%; }
+
+/*
+.reveal table, th, td {
+   border-collapse: collapse;
+   border: 1px solid black;
+   vertical-align: top;
+}
+*/
+
+.reveal td { vertical-align:top; }
+

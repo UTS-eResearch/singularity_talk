@@ -1,0 +1,78 @@
+# Singularity definition for a Centos 7 Base Image
+# Build on yout LOCAL Linux machine with:
+# sudo singularity build --force centos7.img centos7.def
+
+BootStrap: yum
+OSVersion: 7
+MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/x86_64/
+Include: yum
+
+# If you want the latest updates to be installed inside the container 
+# during the bootstrapping process then uncomment the following line
+# UpdateURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/updates/$basearch/
+
+# To store metadata with your container, add them to the %labels section.
+# To see the labels inspect the image.
+%labels
+    Maintainer Mike Lake
+    Version 1.0
+
+# This help will be available when the user types: singularity help this.img
+%help
+    This is a Centos 7 Singularity container for running fortune and cowsay.
+    To run fortune and cowsay: $ singularity run centos7.img
+    To just run fortune:       $ singularity run --app fortune centos7.img
+    To just run cowsay:        $ singularity run --app cowsay centos7.img 'Hello from Angus'
+
+%environment
+# These environment variables are sourced at runtime and not at build time. 
+# If you need the variables during build time, then also define them in your %post section. 
+# These are examples only.
+    VADER="Darth hates cows."
+    LUKE="Luke likes cows."
+    export VADER LUKE
+
+# Commands in the %setup section are executed on the host system 
+# outside of the container after the base OS has been installed. 
+%setup
+    # We need these directories to exist in our container so we can 
+    # bind-mount the hosts directories into there.
+    mkdir -p ${SINGULARITY_ROOTFS}/opt
+    mkdir -p ${SINGULARITY_ROOTFS}/scratch
+    mkdir -p ${SINGULARITY_ROOTFS}/shared
+
+# Files are copied after any %post or installation procedures.
+# This is an example only.
+%files
+    README.txt /opt
+
+# Commands in the %post section are executed within the container 
+# after the base OS has been installed at build time. 
+%post
+    # Setting JAVA_HOME is an example only.
+    echo 'export JAVA_HOME=/shared/homes/999777' >> $SINGULARITY_ENVIRONMENT
+    echo "Installing editor and applications ..."
+    yum -y install epel-release
+    yum -y install vim-minimal
+    yum -y install cowsay fortune-mod
+
+# This section will be run at the very end of the build process.
+%test
+
+##############
+# Applications 
+############## 
+
+# See %help section above for usage.
+
+%apprun fortune
+  exec fortune "$@"
+
+%apprun cowsay
+  echo "$@" | cowsay
+%runscript
+    echo "Hello from inside the singularity of Centos 7."
+    echo "$VADER and $LUKE"
+    fortune | cowsay 
+
+
