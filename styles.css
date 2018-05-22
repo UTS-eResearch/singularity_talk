@@ -1,4 +1,6 @@
-/* p { text-align:left; } */
+p { text-align:left; font-size:smaller; } 
+
+pre { font-size:large; }
 
 reveal h1 { font-size:80%; }
 
@@ -8,7 +10,6 @@ reveal h1 { font-size:80%; }
    border: 1px solid black;
    vertical-align: top;
 }
-*/
-
 .reveal td { vertical-align:top; }
+*/
 
