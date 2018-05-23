@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">    
+<head>
+<meta charset="utf-8">
+<title>A Singularity Tutorial</title>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css">
+<!-- beige.css
+     black.css
+     blood.css
+     league.css
+     moon.css
+     night.css
+     serif.css
+     simple.css
+     sky.css
+     solarized.css
+     white.css
+-->
+<link rel="stylesheet" href="./reveal.js/css/theme/black.css" id="theme">
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+<link rel="stylesheet" href="./singularity_slides.css"> 
+</head>
+<body>
+
+<!-- Wrap the entire slide show in a div using the "reveal" class. -->
+<div class="reveal">
+
+<!-- Wrap all slides in a single "slides" class -->
+<div class="slides">
+
+<!-- ALL SLIDES GO HERE and each section element contains an individual slide -->
+
+<section data-markdown><textarea data-template>
+# A Singularity Tutorial
+    
+<Mike.Lake@uts.edu.au>
+</textarea></section>
+
+
+<section data-markdown><textarea data-template>
+## The Problem
+
+The singularity binary is located in `/opt/singularity-2.4/` which is not on your default path. 
+Append this location to your current path so the binary can be found when you type 
+"singularity" like this:
+ 
+    $ export PATH=/opt/singularity-2.4/bin:$PATH
+
+</textarea></section>
+
+
+<section data-markdown><textarea data-template>
+
+    $ fortune  
+    The following two statements are usually both true:   
+    &nbsp; There's not enough documentation.  
+    &nbsp; There's too much documentation.  
+    -- Larry Wall   
+    $ 
+</textarea></section>
+
+
+<section data-markdown><textarea data-template>
+The program cowsay is a bit different, it requires an input from *stdin* (the standard input). 
+The input is usually piped into it from an echo command or from the output of another program (like fortune).
+
+    $ echo 'Hi, I am an angus cow' | cowsay
+     _______________________
+    < Hi, I am an angus cow >
+     -----------------------
+            \   ^__^
+             \  (oo)\_______
+                (__)\       )\/\
+                    ||----w |
+                    ||     ||
+    $ 
+</textarea></section>
+
+
+
+<section data-markdown><textarea data-template>
+## Main References
+
+Singularity Home Page http://singularity.lbl.gov/
+
+User Guide at http://singularity.lbl.gov/user-guide
+
+FAQ http://singularity.lbl.gov/faq 
+
+Container Registry https://singularity-hub.org
+</textarea></section>
+
+<section data-markdown><textarea data-template>
+## Other References
+
+High-Performance Computing at the NIH: https://hpc.nih.gov/apps/singularity.html
+
+Case Western Reserve University: 
+https://sites.google.com/a/case.edu/hpc-upgraded-cluster/home/Software-Guide/singularity  
+See the section "Installing Singularity & Managing Image in Your PC (Linux)"
+
+A tutorial at Github, "Creating and running software containers with Singularity":  
+https://github.com/NIH-HPC/Singularity-Tutorial
+
+PDF presentation at the HPC Developer Conference:  
+https://wilsonweb.fnal.gov/slides/hpc-containers-singularity-introductory.pdf
+</textarea></section>
+
+
+</div>
+</div>
+
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+<script src="./reveal.js/plugin/markdown/marked.js"></script>
+<script src="./reveal.js/plugin/markdown/markdown.js"></script>
+
+<script>
+    // Required, even if empty.
+    Reveal.initialize({
+        // autoSlide: 5000,
+        controls: true,
+        keyboard: true,
+        progress: true,
+        showNotes: true,
+        slideNumber: true,
+        slideNumber: 'c/t',
+        transition: 'fade',
+        markdown: { smartypants: true },
+        dependencies: [
+		// Zoom in and out with Alt+click
+		{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+		// Speaker notes
+		{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+        // Code highlight
+		{ src: 'reveal.js/plugin/highlight/highlight.js' },
+	    ]
+    });
+</script>
+</body>
+</html>
