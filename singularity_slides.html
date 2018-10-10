@@ -29,76 +29,136 @@
 <!-- Wrap all slides in a single "slides" class -->
 <div class="slides">
 
-<!-- ALL SLIDES GO HERE and each section element contains an individual slide -->
+<!-- The slides go here and each section element is an individual slide -->
 
 <section data-markdown><textarea data-template>
 # A Singularity Tutorial
-    
-<Mike.Lake@uts.edu.au>
+
+<Mike.Lake@uts.edu.au>  
+October 2018 
+
+<small>These slides are available as a PDF. &nbsp; Email me. </small>
+</textarea></section>
+
+
+<section>
+  <pre><code>
+defmodule Math do
+  def sum(a, b) do
+    a + b
+  end
+end
+  </code></pre>
+</section>
+
+
+<section data-markdown><textarea data-template>
+## What is Singularity?
+
+Singularity is a container technology. Containers can be used to package
+applications and data.
+
+- Need to share your code? Put it in a Singularity container and your collaborator 
+  won’t have to go through the pain of installing missing dependencies. 
+- Do you need to run a different operating system? You can "replace" the 
+  operating system on your host for a different one within a Singularity container. 
+
+https://www.sylabs.io/singularity/
 </textarea></section>
 
 
 <section data-markdown><textarea data-template>
-## The Problem
+# How does this Help Science? 
 
-The singularity binary is located in `/opt/singularity-2.4/` which is not on your default path. 
-Append this location to your current path so the binary can be found when you type 
-"singularity" like this:
- 
-    $ export PATH=/opt/singularity-2.4/bin:$PATH
+- Encourages Reproducibility!
+- Helps Portability
+- Can easily leverage other people’s work
+- Supports Reproducible SCI-F Apps
+- Can Archive Software
+</textarea></section>
+
+
+<section data-markdown><textarea data-template>
+# Docker
+
+- Docker is the most well known container platform.
+- Aimed at Developers/DevOps.
+- Docker is designed for the enterprise, not HPC.
+- No reasonable support for MPI.
+- Docker containers usually run as root.
+</textarea></section>
+
+
+<section data-markdown><textarea data-template>
+# Singularity
+
+- Aimed at Scientists.
+- Build-in support for MPI (OpenMPI, MPICH, IntelMPI).
+- Maintains user credentials (inside user == outside user). 
+- Singularity can import and run Docker containers.
+</textarea></section>
+
+
+<section data-markdown><textarea data-template>
+If you want to be root inside of the container, 
+you must first be root outside of the container
+</textarea></section>
+
+
+<section data-markdown><textarea data-template>
+- CentOS
+- RedHat
+- Ubuntu
+- Debian
+- Scientific Linux
+- Bio-Linux
 
 </textarea></section>
 
 
 <section data-markdown><textarea data-template>
+# Singularity Hub
 
-    $ fortune  
-    The following two statements are usually both true:   
-    &nbsp; There's not enough documentation.  
-    &nbsp; There's too much documentation.  
-    -- Larry Wall   
-    $ 
+Singularity Hub is a registry for scientific linux containers.
+Singularity Hub is also a cloud build service for users. 
+The user pushes to Github, a builder is deployed, and the image available to the user.
+This allows a user to build and run an image from a resource
+where he or she doesn’t have sudo simply by using Github as a middleman.
+
+2385 containers across 1249 collections. 
+From 1,500 GB sized images to 22 MB images.
+
+https://www.singularity-hub.org
 </textarea></section>
 
 
 <section data-markdown><textarea data-template>
-The program cowsay is a bit different, it requires an input from *stdin* (the standard input). 
-The input is usually piped into it from an echo command or from the output of another program (like fortune).
-
-    $ echo 'Hi, I am an angus cow' | cowsay
-     _______________________
-    < Hi, I am an angus cow >
-     -----------------------
-            \   ^__^
-             \  (oo)\_______
-                (__)\       )\/\
-                    ||----w |
-                    ||     ||
-    $ 
+<span class=boxed> <!-- .element: class="boxed" "border 1px solid red;"  -->
+  ▸ <small>Create a new container </small>
+  ▸ Customise container
+    shell exec run 
+cat /etc/redhat-release
+</span>
 </textarea></section>
-
 
 
 <section data-markdown><textarea data-template>
 ## Main References
 
-Singularity Home Page http://singularity.lbl.gov/
+Singularity Home Page:  
+https://www.sylabs.io/singularity/
 
-User Guide at http://singularity.lbl.gov/user-guide
+Documentation: https://www.sylabs.io/docs/
 
-FAQ http://singularity.lbl.gov/faq 
+FAQ: https://www.sylabs.io/singularity/faq/ 
 
-Container Registry https://singularity-hub.org
+Container Registry: https://singularity-hub.org
 </textarea></section>
 
 <section data-markdown><textarea data-template>
 ## Other References
 
 High-Performance Computing at the NIH: https://hpc.nih.gov/apps/singularity.html
-
-Case Western Reserve University: 
-https://sites.google.com/a/case.edu/hpc-upgraded-cluster/home/Software-Guide/singularity  
-See the section "Installing Singularity & Managing Image in Your PC (Linux)"
 
 A tutorial at Github, "Creating and running software containers with Singularity":  
 https://github.com/NIH-HPC/Singularity-Tutorial
@@ -107,20 +167,48 @@ PDF presentation at the HPC Developer Conference:
 https://wilsonweb.fnal.gov/slides/hpc-containers-singularity-introductory.pdf
 </textarea></section>
 
+<section data-markdown><textarea data-template>
+These slides are available as a PDF
+
+Email me at Mike.Lake@uts.edu.au
+</textarea></section>
 
 </div>
 </div>
+
+<!--
+The "fortune" program first appeared in Version 7 UNIX in 1979.
+The most common version on modern systems is the BSD fortune, originally written by Ken Arnold.
+Although Arnold's quote-displaying program was not the first in history, as the BSD standard it became by far the most widely used, and its database of quotes was voluminous. 
+
+https://en.wikipedia.org/wiki/Fortune_(Unix)
+
+https://en.wikipedia.org/wiki/Cowsay
+-->
+
 
 <script src="./reveal.js/lib/js/head.min.js"></script>
 <script src="./reveal.js/js/reveal.js"></script>
 <script src="./reveal.js/plugin/markdown/marked.js"></script>
 <script src="./reveal.js/plugin/markdown/markdown.js"></script>
 
+<!-- If the query includes '?print-pdf', include the PDF print sheet -->
+<script>
+  if( window.location.search.match( /print-pdf/gi ) ) {
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'reveal.js/css/print/pdf.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  }
+</script>
+
 <script>
     // Required, even if empty.
     Reveal.initialize({
         // autoSlide: 5000,
         controls: true,
+        controlsLayout: 'bottom-right',
         keyboard: true,
         progress: true,
         showNotes: true,
@@ -128,6 +216,7 @@ https://wilsonweb.fnal.gov/slides/hpc-containers-singularity-introductory.pdf
         slideNumber: 'c/t',
         transition: 'fade',
         markdown: { smartypants: true },
+        help: true,
         dependencies: [
 		// Zoom in and out with Alt+click
 		{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
@@ -135,6 +224,8 @@ https://wilsonweb.fnal.gov/slides/hpc-containers-singularity-introductory.pdf
 		{ src: 'reveal.js/plugin/notes/notes.js', async: true },
         // Code highlight
 		{ src: 'reveal.js/plugin/highlight/highlight.js' },
+        // More info https://github.com/hakimel/reveal.js#dependencies
+		{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); }},
 	    ]
     });
 </script>

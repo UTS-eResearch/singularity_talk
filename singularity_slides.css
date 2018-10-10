@@ -2,7 +2,8 @@ p { text-align:left; font-size:smaller; }
 
 pre { font-size:large; }
 
-reveal h1 { font-size:80%; }
+/* .reveal h1 { font-size:100%; } */
+.reveal boxed { border: 1px solid red; } 
 
 /*
 .reveal table, th, td {

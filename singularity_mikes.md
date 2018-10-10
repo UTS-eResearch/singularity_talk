@@ -113,6 +113,12 @@ symlink `/usr/local/bin/singularity -> /opt/singularity/bin/singularity`
 To build images you also need squashfs-tools to build singularity images amd 
 debootstrap.noarch to build any Debian images.
 
+shell
+
+singularity works if you specify the home directory as an argument:
+
+    $ singularity shell -H $PWD:/srv debian-stretch.simg
+
 
 FAQ
 ---
@@ -136,6 +142,11 @@ Can Singularity support daemon processes?
 > This means you can run a web server, or any other daemon, from within 
 > a container and access it directly from your host.
 
+
+## Docker
+
+Pulling Docker images reduces reproducibility.
+https://www.sylabs.io/guides/3.0/user-guide/quick_start.html
 
 Mikes Notes
 -----------
