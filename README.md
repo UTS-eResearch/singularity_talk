@@ -23,22 +23,31 @@ included in this repo. Be in the same directory as this README.md and do:
 This will have created the directory `reveal.js`. The links in the `singularity_slides.html` 
 file reference files in this directory.  
 
-## Install node.js
+## Creating a PDF of these Slides
 
+The Javascript library `decktape` needs to be installed first. See below. 
+After that just make sure your in the `singularity_talk` directory and do this:
+
+    $ `npm bin`/decktape reveal http://localhost/~mlake/singularity_talk/singularity_slides.html test.pdf
+
+## Install Required Javascript Libs
+
+Install node.js
+
+    $ cd reveal.js
     reveal.js/$ npm install
     Downloading binary from https://github.com/sass/node-sass/releases/download/v4.7.2/linux-x64-48_binding.node
     Caching binary to /home/mlake/.npm/node-sass/4.7.2/linux-x64-48_binding.node
     ....
 
+Install decktape for Creating PDFs:
 
-singularity_tutorial_mrl/$ npm install decktape
+    singularity_talk/$ npm install decktape
+    singularity_talk/$ `npm bin`/decktape
 
-singularity_tutorial_mrl/$ `npm bin`/decktape
+Install highlight.js for syntax highlighting:
 
-singularity_tutorial_mrl/$ npm install highlight.js
-
-singularity_tutorial_mrl/$ `npm bin`/decktape reveal http://localhost/~mlake/singularity_tutorial_mrl/singularity_slides.html test.pdf
-
+    singularity_talk/$ npm install highlight.js
 
 
 Mike Lake  
