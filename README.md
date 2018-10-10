@@ -1,7 +1,6 @@
 # Singularity Talk
 
 This contains slides for a short talk on singularity. 
-
 See also the tutorial for HPC users at 
 <https://hpc.research.uts.edu.au/software_general/singularity/> 
 
