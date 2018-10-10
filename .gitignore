@@ -1,6 +1,5 @@
-reveal.js
 README.html
-singularity_mikes.html
+reveal.js
 node_modules
 npm-debug.log
-
+package-lock.json
