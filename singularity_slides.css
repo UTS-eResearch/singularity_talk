@@ -2,7 +2,7 @@ p { text-align:left; font-size:smaller; }
 
 pre { font-size:large; }
 
-/* .reveal h1 { font-size:100%; } */
+.reveal h2 { font-size:120%; } 
 .reveal boxed { border: 1px solid red; } 
 
 /*
@@ -14,3 +14,5 @@ pre { font-size:large; }
 .reveal td { vertical-align:top; }
 */
 
+
+.reveal section img { background:none; border:none; box-shadow:none; }
