@@ -27,10 +27,19 @@ file reference files in this directory.
 
 ## Creating a PDF of these Slides
 
+Does not work well:
+
 The Javascript library `decktape` needs to be installed first. See below. 
 After that just make sure your in the `singularity_talk` directory and do this:
 
     $ `npm bin`/decktape reveal http://localhost/~mlake/singularity_talk/singularity_slides.html test.pdf
+
+This works OK:
+
+Use Google Chrome!
+Go to: http://localhost/~mlake/singularity_talk/singularity_slides.html?print-pdf
+Use Print / Save
+
 
 ## Install Required Javascript Libs
 
