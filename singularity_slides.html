@@ -32,12 +32,19 @@
 <!-- The slides go here and each section element is an individual slide -->
 
 <section data-markdown><textarea data-template>
+<center>
+<img src="eResearchShortBlurb.jpg" width="90%">
+</center>
+</textarea></section>
+
+
+<section data-markdown><textarea data-template>
 # A Singularity Tutorial
 
 <Mike.Lake@uts.edu.au>  
 October 2018 
 
-<small>These slides are available as a PDF. Email me. </small>
+<small>These slides are available as a PDF. &#8239; Email me. </small>
 <!-- <img src="Universe-Cosmos-Black-Hole-Singularity-Space-3490482.jpg" width=20%> -->
 </textarea></section>
 
@@ -48,23 +55,25 @@ October 2018
 Singularity is a "container" technology. Containers can be used to package
 applications and data.
 
-- Need to share your code? Put it in a Singularity container and your collaborator 
-  won’t have to go through the pain of installing missing dependencies. 
-- Do you need to run a different operating system? You can "replace" the 
-  operating system on your host for a different one within a Singularity container. 
+- Need to run an application that is not on the cluster? Install the app in a singularity.
+- Need to share your hard to install code? Put it in a singularity container, send that to your collaborator. 
+- Need to run a different operating system? Just "replace" the operating system
+  on your host with one from within a singularity. 
 
 https://www.sylabs.io/singularity/
 </textarea></section>
-
+  
+<!-- won’t have to go through the pain of installing missing dependencies. 
+-->
 
 <section data-markdown><textarea data-template>
 ## How does this Help Science? 
 
-- Encourages reproducibility
-- Helps portability
+- Encourages reproducibility.
+- Helps portability.
 - Can more easily share your own work.
-- Can more easily use other people’s work
-- Can provide a way to archive complex software/workflows
+- Can more easily use other people’s work.
+- Can provide a way to archive complex software/workflows.
 </textarea></section>
 
 
@@ -72,10 +81,13 @@ https://www.sylabs.io/singularity/
 ## Docker
 
 - Docker is the most well known container platform.
-- Aimed at Developers/DevOps.
+- Aimed at Software Developers
 - Docker is designed for the enterprise, not HPC.
 - No reasonable support for MPI.
 - Docker containers usually run as root.
+<aside class="notes">
+Message Passing Interface
+</aside>
 </textarea></section>
 
 
@@ -84,7 +96,7 @@ https://www.sylabs.io/singularity/
 
 - Aimed at Scientists.
 - Build-in support for MPI (OpenMPI, MPICH, IntelMPI).
-- Maintains user credentials (inside user = outside user). 
+- Maintains user credentials: inside user = outside user. 
 - Singularity can import and run Docker containers.
 </textarea></section>
 
@@ -93,13 +105,19 @@ https://www.sylabs.io/singularity/
 ## Singularity is Safe for Sys Admins :-)
 
 If you want to be root inside of the container, 
-you must first be root outside of the container
+you must first be root outside of the container.  
+*Hence you have to build the container outside of the HPC.*
+
+Then copy the container over to the HPC.  
+*Now run the container as a normal user.*
+
+HPC Sys Admins will be happy with this!
 </textarea></section>
 
 
 <section data-markdown><textarea data-template>
-Run a different operating system by "replacing" the 
-  operating system on your host: 
+You can run a different operating system by "replacing" the 
+operating system on your host. You can run:
 - CentOS
 - RedHat
 - Ubuntu
@@ -131,7 +149,7 @@ Singularity Hub is also a cloud build service for users.
 
 The user pushes to Github, a builder is deployed, and the image is available to the user.
 This allows a user to build and run an image from a resource
-where he or she doesn’t have sudo simply by using Github as a middleman.
+where they don’t have root access simply by using Github as a middleman.
 </textarea></section>
 
 
@@ -176,11 +194,6 @@ This is how we run the Centos 7 image on the HPC:
 
 
 <section data-markdown><textarea data-template>
-TODO
-</textarea></section>
-
-
-<section data-markdown><textarea data-template>
 ## Main References
 
 Singularity Home Page:  
@@ -210,17 +223,6 @@ These slides are available as a PDF
 
 Email me at Mike.Lake@uts.edu.au
 </textarea></section>
-
-
-<section>
-  <pre><code>
-defmodule Math do
-  def sum(a, b) do
-    a + b
-  end
-end
-  </code></pre>
-</section>
 
 </div>
 </div>
@@ -260,7 +262,7 @@ https://en.wikipedia.org/wiki/Cowsay
         controlsLayout: 'bottom-right',
         keyboard: true,
         progress: true,
-        showNotes: true,
+        showNotes: false,
         slideNumber: true,
         slideNumber: 'c/t',
         transition: 'fade',
