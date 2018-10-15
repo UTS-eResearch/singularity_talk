@@ -2,7 +2,7 @@
 <html lang="en">    
 <head>
 <meta charset="utf-8">
-<title>A Singularity Tutorial</title>
+<title>A Quick Singularity Overview</title>
 <link rel="stylesheet" href="./reveal.js/css/reveal.css">
 <!-- beige.css
      black.css
@@ -33,13 +33,13 @@
 
 <section data-markdown><textarea data-template>
 <center>
-<img src="eResearchShortBlurb.jpg" width="90%">
+<img src="eResearch_intro.jpg" width="90%">
 </center>
 </textarea></section>
 
 
 <section data-markdown><textarea data-template>
-# A Singularity Tutorial
+# A Quick Singularity Overview
 
 <Mike.Lake@uts.edu.au>  
 October 2018 
@@ -116,40 +116,16 @@ HPC Sys Admins will be happy with this!
 
 
 <section data-markdown><textarea data-template>
+## Run a Different Operating System!
+
 You can run a different operating system by "replacing" the 
 operating system on your host. You can run:
-- CentOS
-- RedHat
-- Ubuntu
-- Debian
+- Fedora, CentOS, RedHat
+- Debian, Ubuntu
 - Scientific Linux
 - Bio-Linux
 
 and many more ...
-
-</textarea></section>
-
-
-<section data-markdown><textarea data-template>
-## Singularity Hub
-
-Singularity Hub is a registry for scientific linux containers.
-
-2385 containers across 1249 collections.   
-From 1,500 GB sized images to small 22 MB images.
-
-https://www.singularity-hub.org
-</textarea></section>
-
-
-<section data-markdown><textarea data-template>
-## Singularity Hub
-
-Singularity Hub is also a cloud build service for users. 
-
-The user pushes to Github, a builder is deployed, and the image is available to the user.
-This allows a user to build and run an image from a resource
-where they don’t have root access simply by using Github as a middleman.
 </textarea></section>
 
 
@@ -194,6 +170,45 @@ This is how we run the Centos 7 image on the HPC:
 
 
 <section data-markdown><textarea data-template>
+## Singularity Hub
+
+Singularity Hub is a registry for scientific linux containers.
+
+2385 containers across 1249 collections.   
+From 1,500 GB sized images to small 22 MB images.
+
+https://www.singularity-hub.org
+</textarea></section>
+
+
+<section data-markdown><textarea data-template>
+## Singularity Hub
+
+Singularity Hub is also a cloud build service for users. 
+
+The user pushes to Github, a builder is deployed, and the image is available to the user.
+This allows a user to build and run an image from a resource
+where they don’t have root access simply by using Github as a middleman.
+</textarea></section>
+
+
+<section data-markdown><textarea data-template>
+<center>
+<img src="singularity_hub_example1.png" >
+</center>
+</textarea></section>
+
+
+
+<section data-markdown><textarea data-template>
+<center>
+<img src="singularity_hub_example2.png" >
+</center>
+</textarea></section>
+
+
+
+<section data-markdown><textarea data-template>
 ## Main References
 
 Singularity Home Page:  
@@ -230,10 +245,11 @@ Email me at Mike.Lake@uts.edu.au
 <!--
 The "fortune" program first appeared in Version 7 UNIX in 1979.
 The most common version on modern systems is the BSD fortune, originally written by Ken Arnold.
-Although Arnold's quote-displaying program was not the first in history, as the BSD standard it became by far the most widely used, and its database of quotes was voluminous. 
+Although Arnold's quote-displaying program was not the first in history, as the
+BSD standard it became by far the most widely used, and its database of quotes
+was voluminous. 
 
 https://en.wikipedia.org/wiki/Fortune_(Unix)
-
 https://en.wikipedia.org/wiki/Cowsay
 -->
 
