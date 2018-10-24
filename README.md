@@ -4,9 +4,6 @@ This contains slides for a short talk on singularity.
 See also the tutorial for HPC users at 
 <https://hpc.research.uts.edu.au/software_general/singularity/> 
 
-https://www.maxpixel.net/Universe-Cosmos-Black-Hole-Singularity-Space-3490482
-The pictures on Max Pixel be freely distributed with a Creative Commons Zero - CC0.
-
 ## Files
 
   - singularity_slides.html - The HTML tutorial as "Reveal" slides. I'm using Markdown within the slides.
@@ -60,6 +57,9 @@ Install highlight.js for syntax highlighting:
 
     singularity_talk/$ npm install highlight.js
 
+Didn't use this image.  
+https://www.maxpixel.net/Universe-Cosmos-Black-Hole-Singularity-Space-3490482
+The pictures on Max Pixel be freely distributed with a Creative Commons Zero - CC0.
 
 Mike Lake  
 October 2018
