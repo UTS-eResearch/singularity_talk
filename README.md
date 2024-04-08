@@ -57,10 +57,6 @@ Install highlight.js for syntax highlighting:
 
     singularity_talk/$ npm install highlight.js
 
-Didn't use this image.  
-https://www.maxpixel.net/Universe-Cosmos-Black-Hole-Singularity-Space-3490482
-The pictures on Max Pixel be freely distributed with a Creative Commons Zero - CC0.
-
 Mike Lake  
 October 2018
 
